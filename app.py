@@ -581,47 +581,43 @@ with tab2:
     </style>
     """, unsafe_allow_html=True)
 
-    col_cls, col_reg = st.columns(2)
+    st.markdown("**Classification Model – Failure Type**")
+    st.markdown("""
+    <table class="perf-table">
+      <thead>
+        <tr>
+          <th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>CV Mean</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="best-row">
+          <td>Random Forest</td><td>80.95%</td><td>81.20%</td><td>80.95%</td><td>80.85%</td><td>80.62%</td>
+        </tr>
+        <tr>
+          <td>Logistic Regression</td><td>80.95%</td><td>80.10%</td><td>80.95%</td><td>80.30%</td><td>83.67%</td>
+        </tr>
+      </tbody>
+    </table>
+    """, unsafe_allow_html=True)
 
-    with col_cls:
-        st.markdown("**Classification Model – Failure Type**")
-        st.markdown("""
-        <table class="perf-table">
-          <thead>
-            <tr>
-              <th>Model</th><th>Accuracy</th><th>Precision</th><th>Recall</th><th>F1-Score</th><th>CV Mean</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="best-row">
-              <td>Random Forest</td><td>80.95%</td><td>81.20%</td><td>80.95%</td><td>80.85%</td><td>80.62%</td>
-            </tr>
-            <tr>
-              <td>Logistic Regression</td><td>80.95%</td><td>80.10%</td><td>80.95%</td><td>80.30%</td><td>83.67%</td>
-            </tr>
-          </tbody>
-        </table>
-        """, unsafe_allow_html=True)
-
-    with col_reg:
-        st.markdown("**Regression Model – RUL Prediction**")
-        st.markdown("""
-        <table class="perf-table">
-          <thead>
-            <tr>
-              <th>Model</th><th>MAE (cycles)</th><th>RMSE (cycles)</th><th>R²</th><th>Improvement</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="best-row">
-              <td>Random Forest</td><td>34.87</td><td>40.87</td><td>0.83</td><td>22.8% better MAE</td>
-            </tr>
-            <tr>
-              <td>Linear Regression</td><td>45.17</td><td>60.42</td><td>0.71</td><td>—</td>
-            </tr>
-          </tbody>
-        </table>
-        """, unsafe_allow_html=True)
+    st.markdown("**Regression Model – RUL Prediction**")
+    st.markdown("""
+    <table class="perf-table">
+      <thead>
+        <tr>
+          <th>Model</th><th>MAE (cycles)</th><th>RMSE (cycles)</th><th>R²</th><th>Improvement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr class="best-row">
+          <td>Random Forest</td><td>34.87</td><td>40.87</td><td>0.83</td><td>22.8% better MAE</td>
+        </tr>
+        <tr>
+          <td>Linear Regression</td><td>45.17</td><td>60.42</td><td>0.71</td><td>—</td>
+        </tr>
+      </tbody>
+    </table>
+    """, unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown("### Top 10 Features for RUL Prediction")
